@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unipi.weatheranalyzerapp.MoreController">
+   <children>
+      <GridPane prefHeight="480.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="321.0" prefWidth="60.0" style="-fx-background-color: gray;" GridPane.rowIndex="1" GridPane.rowSpan="3">
+               <children>
+                  <Button fx:id="weatherButton" layoutX="10.0" layoutY="100.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#weather" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: gray; -fx-border-color: orange;" text="Weather" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="220.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#bookmark" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: gray; -fx-border-color: orange;" text="Bookmarks" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <TextField fx:id="cityField" layoutY="10.0" maxHeight="20.0" maxWidth="120.0" minHeight="20.0" minWidth="120.0" prefHeight="20.0" prefWidth="120.0" />
+                  <TextField fx:id="lonField" layoutX="245.0" layoutY="10.0" maxHeight="20.0" maxWidth="55.0" minHeight="20.0" minWidth="55.0" prefHeight="20.0" prefWidth="55.0" />
+                  <TextField fx:id="latField" layoutX="180.0" layoutY="10.0" maxHeight="20.0" maxWidth="55.0" minHeight="20.0" minWidth="55.0" prefHeight="20.0" prefWidth="55.0" />
+                  <Button fx:id="requestButton" layoutX="90.0" layoutY="285.0" mnemonicParsing="false" onAction="#request" prefHeight="20.0" prefWidth="120.0" style="-fx-background-radius: 40px;" text="Richiedi" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="14.0" />
+                     </font>
+                  </Button>
+                  <Text layoutX="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lat" wrappingWidth="19.470703125" />
+                  <Text layoutX="245.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lon" />
+                  <Text fx:id="cityText" strokeType="OUTSIDE" strokeWidth="0.0" text="Città" />
+                  <TableView fx:id="table" layoutY="40.0" prefHeight="230.0" prefWidth="300.0" />
+               </children>
+            </Pane>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="140.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="310.0" minHeight="310.0" prefHeight="310.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: orange;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="WeatherAnalyzer" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <MenuBar style="-fx-background-color: lightgray; -fx-border-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <menus>
+            <Menu fx:id="optionMenu" mnemonicParsing="false" text="Options">
+               <items>
+                  <Menu fx:id="languageMenu" mnemonicParsing="false" text="Language">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setIt" text="Italiano" />
+                        <MenuItem mnemonicParsing="false" onAction="#setEn" text="English" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

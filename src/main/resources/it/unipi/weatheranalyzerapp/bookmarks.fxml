@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unipi.weatheranalyzerapp.BookmarksController">
+   <children>
+      <GridPane prefHeight="480.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="321.0" prefWidth="60.0" style="-fx-background-color: gray;" GridPane.rowIndex="1" GridPane.rowSpan="3">
+               <children>
+                  <Button fx:id="moreButton" layoutX="10.0" layoutY="100.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#last10" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: gray; -fx-border-color: orange;" text="Altri" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="10.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="weatherButton" layoutX="10.0" layoutY="220.0" maxHeight="80.0" maxWidth="80.0" minHeight="80.0" minWidth="80.0" mnemonicParsing="false" onAction="#weather" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: gray; -fx-border-color: orange;" text="Meteo" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Arial Bold" size="10.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane prefHeight="300.0" prefWidth="300.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <children>
+                  <TableView fx:id="table" prefHeight="310.0" prefWidth="300.0">
+                     <contextMenu>
+                        <ContextMenu>
+                          <items>
+                            <MenuItem fx:id="addMenu" mnemonicParsing="false" onAction="#add" text="add" />
+                              <MenuItem fx:id="removeMenu" mnemonicParsing="false" onAction="#remove" text="remove" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="100.0" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="140.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="300.0" prefWidth="300.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="0.0" prefWidth="140.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="60.0" minHeight="60.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="0.0" prefHeight="50.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="310.0" minHeight="310.0" prefHeight="310.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="0.0" prefHeight="60.0" vgrow="SOMETIMES" />
+            <RowConstraints />
+         </rowConstraints>
+      </GridPane>
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: orange;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="WeatherAnalyzer" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Arial Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <MenuBar style="-fx-background-color: lightgray; -fx-border-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <menus>
+            <Menu fx:id="optionMenu" mnemonicParsing="false" text="Options">
+               <items>
+                  <Menu fx:id="languageMenu" mnemonicParsing="false" text="Language">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setIt" text="Italiano" />
+                        <MenuItem mnemonicParsing="false" onAction="#setEn" text="English" />
+                     </items>
+                  </Menu>
+                  <MenuItem mnemonicParsing="false" onAction="#logout" text="Logout" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>

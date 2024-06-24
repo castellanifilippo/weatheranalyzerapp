@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.unipi.weatheranalyzerapp.LoginController">
+   <children>
+      <GridPane alignment="CENTER" prefHeight="480.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="234.0" prefWidth="234.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="140.0" prefHeight="140.0" vgrow="ALWAYS" />
+          <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" vgrow="NEVER" />
+          <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <children>
+            <Pane prefHeight="200.0" prefWidth="234.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Text layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="147.564697265625">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="usernameField" layoutY="28.0" prefHeight="39.0" prefWidth="234.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
+                  <Text layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="147.564697265625">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <PasswordField fx:id="passwordField" layoutY="102.0" prefHeight="39.0" prefWidth="234.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="loginBut" layoutY="158.0" mnemonicParsing="false" onAction="#login" style="-fx-background-radius: 20px;" text="Login">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="signBut" layoutX="166.0" layoutY="158.0" mnemonicParsing="false" onAction="#sign" prefHeight="39.0" prefWidth="68.0" style="-fx-background-radius: 20px;" text="Sign">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+            <Text fx:id="errorText" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="234.978515625" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </GridPane>
+      <VBox alignment="CENTER" prefHeight="60.0" prefWidth="640.0" style="-fx-background-color: orange;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="WeatherAnalyzer" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <MenuBar layoutX="600.0" layoutY="460.0" style="-fx-background-color: lightgray; -fx-border-color: gray;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <menus>
+            <Menu fx:id="optionMenu" mnemonicParsing="false" text="Options">
+               <items>
+                  <Menu fx:id="languageMenu" mnemonicParsing="false" text="Language">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#setIt" text="Italiano" />
+                        <MenuItem mnemonicParsing="false" onAction="#setEn" text="English" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
