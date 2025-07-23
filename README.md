@@ -58,8 +58,7 @@ WeatherAnalyzerApp is a JavaFX desktop application designed for the analysis and
 ## Main Workflow
 
 - **Dashboard:** Quickly access the latest weather data and key trends.
-- **Filters:** Select time intervals, weather stations, and data types.
-- **Charts:** Switch between various visualizations (e.g., temperature over time, cross-station comparisons).
+- **Charts:** Switch between various visualizations.
 - **Data Export:** Export table data to CSV.
 - **Error Handling:** The app will notify you in case of network or data issues.
 
